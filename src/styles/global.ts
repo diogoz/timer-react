@@ -17,6 +17,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-size: 1rem;
     -webkit-font-smoothing: antialiased;
+    border: 0 none;
   }
   body {
     background: #333;
