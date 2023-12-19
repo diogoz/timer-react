@@ -13,6 +13,7 @@ export const HomeContainer = styled.main`
     gap: 3.5rem;
   }
 `
+
 export const FormContainer = styled.div`
   width: 100%;
   display: flex;
@@ -30,12 +31,10 @@ export const CountdownContainer = styled.div`
   font-size: 10rem;
   line-height: 8rem;
   color: ${({ theme }) => theme.colors['gray-100']};
-
   display: flex;
   gap: 1rem;
-
   span {
-    color: ${({ theme }) => theme.colors['gray-700']};
+    background: ${({ theme }) => theme.colors['gray-700']};
     padding: 2rem 1rem;
     border-radius: 8px;
   }
