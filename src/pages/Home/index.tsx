@@ -8,17 +8,28 @@ import {
   MinuteAmountInput,
   TaskNameInput,
 } from './styles'
+import { useForm } from 'react-hook-form'
 
 export function Home() {
+  const { register, handleSubmit, watch } = useForm()
+
+  function handleCreateNewTask(data: any) {
+    console.log(data)
+  }
+
+  const task = watch('task')
+  const isSubmitDisabled = !task
+
   return (
     <HomeContainer>
-      <form>
+      <form onSubmit={handleSubmit(handleCreateNewTask)}>
         <FormContainer>
           <label htmlFor="task">Vou trabalhar em</label>
           <TaskNameInput
             id="task"
             list="suggestion-task"
             placeholder="Dê um nome para seu projeto"
+            {...register('task')}
           />
 
           <datalist id="suggestion-task">
@@ -36,6 +47,7 @@ export function Home() {
             step={5}
             min={5}
             max={60}
+            {...register('minutesAmount', { valueAsNumber: true })}
           />
 
           <span>minutos.</span>
@@ -49,7 +61,7 @@ export function Home() {
           <span>0</span>
         </CountdownContainer>
 
-        <CoutdownStartButton type="submit">
+        <CoutdownStartButton type="submit" disabled={isSubmitDisabled}>
           <Play size={24} />
           Começar
         </CoutdownStartButton>
