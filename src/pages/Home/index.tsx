@@ -11,17 +11,26 @@ import {
 import { useForm } from 'react-hook-form'
 import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useState } from 'react'
+
+const newCycleFormValidationSchema = zod.object({
+  task: zod.string().min(1, 'Informe a tarefa'),
+  minutesAmount: zod
+    .number()
+    .min(5, 'O ciclo precisa ser de no mínimo 5 minutos')
+    .max(60, 'O ciclo precisa ser de no máximo 60 minutos'),
+})
+
+type NewCycleFormData = zod.infer<typeof newCycleFormValidationSchema>
+interface ICycle {
+  id: string
+  task: string
+  minutesAmount: number
+}
 
 export function Home() {
-  const newCycleFormValidationSchema = zod.object({
-    task: zod.string().min(1, 'Informe a tarefa'),
-    minutesAmount: zod
-      .number()
-      .min(5, 'O ciclo precisa ser de no mínimo 5 minutos')
-      .max(60, 'O ciclo precisa ser de no máximo 60 minutos'),
-  })
-
-  type NewCycleFormData = zod.infer<typeof newCycleFormValidationSchema>
+  const [cycles, setCycles] = useState<ICycle[]>([])
+  const [activeCycleId, setActiveCycleId] = useState<string | null>(null)
 
   const { register, handleSubmit, watch, reset } = useForm<NewCycleFormData>({
     resolver: zodResolver(newCycleFormValidationSchema),
@@ -32,9 +41,26 @@ export function Home() {
   })
 
   function handleCreateNewTask(data: NewCycleFormData) {
-    console.log(data)
+    // criação de ID única para identificação de cada tarefa
+    const id = String(new Date().getTime())
+
+    // criação do objeto Ciclo, com informações vindas do input.
+    const newCycle: ICycle = {
+      id,
+      task: data.task,
+      minutesAmount: data.minutesAmount,
+    }
+    // adiciona o novo ciclo no array de ciclos
+    setCycles((state) => [...state, newCycle])
+
+    // adiciona o id no state de ciclo ativo.
+    setActiveCycleId(id)
     reset()
   }
+  // percorre toda a lista para ver qual é o ciclo ativo atual
+  const activeCycle = cycles.filter((cycle) => cycle.id === activeCycleId)
+
+  console.log('activeCycle', activeCycle)
 
   const task = watch('task')
   const isSubmitDisabled = !task
