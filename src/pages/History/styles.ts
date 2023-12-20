@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import styled from 'styled-components'
 
 export const HistoryContainer = styled.main`
@@ -49,5 +50,31 @@ export const HistoryList = styled.div`
         padding-right: 1.5rem;
       }
     }
+  }
+`
+
+const STATUS_COLORS = {
+  yellow: 'yellow-500',
+  green: 'green-500',
+  red: 'red-500',
+} as const
+
+interface StatusProps {
+  statuscolor: keyof typeof STATUS_COLORS
+}
+
+export const Status = styled.span.withConfig({
+  shouldForwardProp: (prop) => prop === 'statuscolor' || prop === 'children',
+}) <StatusProps>`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  &::before {
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 8px;
+    background: ${(props) =>
+    props.theme.colors[STATUS_COLORS[props.statuscolor]]};
   }
 `
