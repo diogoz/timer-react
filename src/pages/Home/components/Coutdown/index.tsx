@@ -25,7 +25,6 @@ export function Countdown() {
 
         if (secondsDifference >= totalSeconds) {
           markCurrentCycleAsFinished()
-
           setSecondsPassed(totalSeconds)
           clearInterval(interval)
         } else {
