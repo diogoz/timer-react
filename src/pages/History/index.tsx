@@ -1,5 +1,4 @@
 import { HistoryContainer, HistoryList, Status } from './styles'
-
 export function History() {
   return (
     <HistoryContainer>
