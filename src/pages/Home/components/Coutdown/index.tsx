@@ -55,7 +55,7 @@ export function Countdown() {
 
   useEffect(() => {
     if (activeCycle) {
-      document.title = `${minutes}:${seconds}`
+      document.title = `${activeCycle.task} ${minutes}:${seconds}`
     }
   }, [minutes, seconds, activeCycle])
 

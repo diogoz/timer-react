@@ -68,7 +68,6 @@ export function CycleContextProvider({ children }: { children: ReactNode }) {
     // adiciona o id no state de ciclo ativo.
     setActiveCycleId(id)
     setAmountSecondsPassed(0)
-    // reset()
   }
 
   function interruptCurrentCycle() {
