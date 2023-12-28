@@ -31,6 +31,7 @@ export function cyclesReducer(state: CyclesState, action: any) {
       return produce(state, (draft) => {
         draft.activeCycleId = null
         draft.cycles[currentCycleIndex].interruptedDate = new Date()
+        document.title = 'Ciclo interrompido'
       })
     }
     // return {
@@ -55,7 +56,8 @@ export function cyclesReducer(state: CyclesState, action: any) {
 
       return produce(state, (draft) => {
         draft.activeCycleId = null
-        draft.cycles[currentCycleIndex].interruptedDate = new Date()
+        draft.cycles[currentCycleIndex].finishedDate = new Date()
+        document.title = 'Ciclo finalizado!'
       })
     }
     // return {
