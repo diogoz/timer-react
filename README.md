@@ -12,8 +12,8 @@
     <img alt="Stargazers" src="https://img.shields.io/github/stars/diogoz/timer-react?style=social">
   </a>
 
-  <a href="https://ignite-timer-rho.vercel.app/">
-    <img alt="timer-react" src="https://img.shields.io/badge/ignite-timer-%237159c1?style=flat&logo=ghost">
+  <a href="https://timer-react-two.vercel.app/">
+    <img alt="timer-react" src="https://img.shields.io/badge/timer-react-%237159c1?style=flat&logo=ghost">
   </a>
 </p>
 
