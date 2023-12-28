@@ -18,7 +18,7 @@
 </p>
 
 <h1 align="center">
-    <img alt="timer-react" title="#ignite-timer" src="./.github/logo.svg" />
+    <img alt="react-timer" title="#react-timer" src="./.github/logo.svg" />
 </h1>
 
 <p align="center">
@@ -31,16 +31,16 @@
 </p>
 
 <div align="center"> 
-	<img alt="ignite-timer" title="#ignite-timer" src="./.github/banner-1.PNG" />
+	<img alt="react-timer" title="#react-timer" src="./.github/banner-1.PNG" />
 </div>
 
 <div align="center"> 
-	<img alt="ignite-timer" title="#ignite-timer" src="./.github/banner-2.PNG" />
+	<img alt="react-timer" title="#react-timer" src="./.github/banner-2.PNG" />
 </div>
 
 ## About
 
-⏳ ignite-timer - Counter to use with Pomodoro technique.
+⏳ react-timer - Counter to use with Pomodoro technique.
 
 Project developed during the ReactJS Ignite Course from [Rocketseat](https://www.rocketseat.com.br/ignite).
 
@@ -110,7 +110,7 @@ The following tools were used in the construction of the project:
  <sub><b>Diogo Sousa</b></sub></a> <a href="www.linkedin.com/in/diogo-henrique-evangelista-sousa-9637a2113" title="linkedin"></a>
  <br />
 
-[![Gmail Badge](https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:dhesousa77@gmail.com)](mailto:dhesousa77@gmail.com)
+[![Gmail Badge](https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:dhesousa77@gmail.com)](mailto:dhesousa77@gmail.com) [![Linkedin Badge](https://img.shields.io/badge/-Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/diogo-henrique-evangelista-sousa/)](https://www.linkedin.com/in/diogo-henrique-evangelista-sousa/)
 
 ---
 
